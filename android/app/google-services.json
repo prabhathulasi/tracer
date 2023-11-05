@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "82261452356",
+    "project_id": "journymanagement-3159a",
+    "storage_bucket": "journymanagement-3159a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82261452356:android:e44ca206e7fd27fb7bbe11",
+        "android_client_info": {
+          "package_name": "in.co.tracer.jm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "82261452356-02p779cog7o87pnpl56r7ivmnqvmg8io.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeyETOKpxELCXw0JOo2U7J8pa8LyPtpEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "82261452356-02p779cog7o87pnpl56r7ivmnqvmg8io.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
