@@ -148,7 +148,7 @@ class _DashboardScreenPageState extends State<DashboardScreenPage> {
                       context: context,
                       builder: (BuildContext context) => CupertinoAlertDialog(
                         title: const Text("CONFIRMATION"),
-                        content: const Text("ARE YOU SURE TO LOGOUT?"),
+                        content: const Text("Are You Sure To Logout?"),
                         actions: <Widget>[
                           TextButton(
                             onPressed: () async {

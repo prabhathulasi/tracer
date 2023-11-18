@@ -58,10 +58,9 @@ class InspectionListItem extends StatelessWidget {
             padding: EdgeInsets.only(top: 3.h),
             child: GestureDetector(
                 onTap: onViewPressed,
-                child: Icon(
-                  FontAwesomeIcons.eye,
-                  color: Color(0xffb0edff),
-                  size: 5.sp,
+                child: Image.asset(
+                  "assets/images/view.png",
+                  width: 5.w,
                 )),
           ),
           SizedBox(width: 9.5.w),
@@ -70,10 +69,9 @@ class InspectionListItem extends StatelessWidget {
                   padding: EdgeInsets.only(top: 3.h),
                   child: GestureDetector(
                       onTap: onDeletePressed,
-                      child: Icon(
-                        Icons.delete,
-                        color: Color(0xffb0edff),
-                        size: 5.sp,
+                      child: Image.asset(
+                        "assets/images/delete.png",
+                        width: 5.w,
                       )),
                 )
               : Padding(
@@ -93,8 +91,8 @@ class InspectionListItem extends StatelessWidget {
                   child: GestureDetector(
                       child: Icon(
                     FontAwesomeIcons.solidCircleCheck,
-                    color: Colors.green,
-                    size: 5.sp,
+                    color: AppColors.colorb7b,
+                    size: 6.sp,
                   )),
                 )
               : Container(),

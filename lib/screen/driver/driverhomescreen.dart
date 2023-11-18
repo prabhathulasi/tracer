@@ -125,20 +125,14 @@ class _DriverHomeScreenPageState extends State<DriverHomeScreenPage> {
               Padding(
                   padding: const EdgeInsets.only(right: 20.0),
                   child: GestureDetector(
-                    onTap: () {},
-                    child: _connectionStatus == ConnectivityResult.wifi ||
-                            _connectionStatus == ConnectivityResult.mobile
-                        ? const Icon(
-                            Icons.signal_wifi_4_bar,
-                            color: Color(0xffb0edff),
-                            size: 26.0,
-                          )
-                        : const Icon(
-                            Icons.signal_wifi_off,
-                            color: Colors.red,
-                            size: 26.0,
-                          ),
-                  )),
+                      onTap: () {},
+                      child: _connectionStatus == ConnectivityResult.wifi ||
+                              _connectionStatus == ConnectivityResult.mobile
+                          ? Container()
+                          : Image.asset(
+                              "assets/images/no_wifi.png",
+                              width: 5.8.w,
+                            ))),
               Padding(
                   padding: const EdgeInsets.only(right: 20.0),
                   child: GestureDetector(

@@ -788,7 +788,7 @@ class _CreateJourneyScreenPageState extends State<CreateJourneyScreenPage> {
                     context: context,
                     builder: (BuildContext context) => AlertDialog(
                       title: const Text("CONFIRMATION"),
-                      content: const Text("ARE YOU SURE TO LOGOUT?"),
+                      content: const Text("Are You Sure To Logout?"),
                       actions: <Widget>[
                         TextButton(
                           onPressed: () async {

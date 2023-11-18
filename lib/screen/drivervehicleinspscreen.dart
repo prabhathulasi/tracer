@@ -260,19 +260,20 @@ class _DriverVehicleInspectionScreenPageState
           ));
         } else {
           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-            content: Text('Failed to upload image'),
+            content:
+                Text('Failed to upload image. Please retry after some time'),
             backgroundColor: Colors.red,
           ));
         }
       } else {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text('Failed to upload image'),
+          content: Text('Failed to upload image. Please retry after some time'),
           backgroundColor: Colors.red,
         ));
       }
     } catch (error) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        content: Text('Failed to upload image'),
+        content: Text('Failed to upload image. Please retry after some time'),
         backgroundColor: Colors.red,
       ));
     }
@@ -332,6 +333,7 @@ class _DriverVehicleInspectionScreenPageState
     return Scaffold(
         backgroundColor: const Color(0xff09313c),
         appBar: AppBar(
+          leadingWidth: 7.w,
           iconTheme: const IconThemeData(color: AppColors.colordff),
           backgroundColor: Colors.transparent,
           title: Text("Vehicle Inspection",
@@ -343,20 +345,14 @@ class _DriverVehicleInspectionScreenPageState
             Padding(
                 padding: const EdgeInsets.only(right: 20.0),
                 child: GestureDetector(
-                  onTap: () {},
-                  child: _connectionStatus == ConnectivityResult.wifi ||
-                          _connectionStatus == ConnectivityResult.mobile
-                      ? const Icon(
-                          Icons.signal_wifi_4_bar,
-                          color: Color(0xffb0edff),
-                          size: 26.0,
-                        )
-                      : const Icon(
-                          Icons.signal_wifi_off,
-                          color: Colors.red,
-                          size: 26.0,
-                        ),
-                )),
+                    onTap: () {},
+                    child: _connectionStatus == ConnectivityResult.wifi ||
+                            _connectionStatus == ConnectivityResult.mobile
+                        ? Container()
+                        : Image.asset(
+                            "assets/images/no_wifi.png",
+                            width: 5.8.w,
+                          ))),
             Padding(
                 padding: const EdgeInsets.only(right: 20.0),
                 child: GestureDetector(
@@ -478,7 +474,10 @@ class _DriverVehicleInspectionScreenPageState
                   ),
                   child: Row(
                     children: [
-                      Icon(Icons.camera_alt, size: 5.sp), // Add the icon here
+                      Image.asset(
+                        "assets/images/add_image.png",
+                        width: 5.w,
+                      ),
                       SizedBox(
                           width: 2.5
                               .sp), // Add some space between the icon and the text
@@ -499,7 +498,7 @@ class _DriverVehicleInspectionScreenPageState
                   onPressed: () async {
                     if (ipModel.pointsArr.isEmpty) {
                       Fluttertoast.showToast(
-                          msg: "Please Upload the Inspection Images!");
+                          msg: "Please Upload the Vehicle Inspection Images!");
                     } else if (ipModel.pointsArr.length ==
                         uploadedImagesLength) {
                       var data = await vehicleInspectionProvider
@@ -514,7 +513,7 @@ class _DriverVehicleInspectionScreenPageState
                     } else {
                       log(ipModel.pointsArr.length.toString());
                       Fluttertoast.showToast(
-                          msg: "Please Upload the Inspection Images");
+                          msg: "Please Upload the Vehicle Inspection Images");
                     }
                     // else {
                     //   bool allItemsUploaded = ipModel.pointsArr

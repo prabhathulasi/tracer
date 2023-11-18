@@ -197,7 +197,7 @@ class _DriverJourneyScreenPageState extends State<DriverJourneyScreenPage> {
                         style: TextStyle(
                             fontFamily: "RRegular",
                             fontSize: 4.sp,
-                            color: Color(0xFFb0edff))),
+                            color: const Color(0xFFbcc0cb))),
                     SizedBox(
                       width: 2.8.w,
                     ),
@@ -328,14 +328,47 @@ class _DriverJourneyScreenPageState extends State<DriverJourneyScreenPage> {
             toastLength: Toast.LENGTH_LONG);
       });
       if (actionStr == '14') {
-        //Navigator.pop(context);
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) =>
-                ProgressHUD(child: const DriverHomeScreenPage()),
+        // ignore: use_build_context_synchronously
+        showDialog<String>(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+            backgroundColor: AppColors.color164,
+            title: const Text("CONFIRMATION",
+                style: TextStyle(color: Colors.white)),
+            content: const Text("Are You Sure To Logout?",
+                style: TextStyle(color: Colors.white)),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () async {
+                  logoutClear();
+                  Navigator.of(context).popUntil((route) => route.isFirst);
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //       builder: (context) => const LoginScreen()),
+                  // );
+                },
+                child: const Text(
+                  'YES',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              TextButton(
+                onPressed: () async {
+                  Navigator.pop(context, 'OK');
+                },
+                child: const Text('NO', style: TextStyle(color: Colors.white)),
+              ),
+            ],
           ),
         );
+        // Navigator.pushReplacement(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: (context) =>
+        //         ProgressHUD(child: const DriverHomeScreenPage()),
+        //   ),
+        // );
       } else {
         fetchDashboardData();
       }
@@ -528,7 +561,7 @@ class _DriverJourneyScreenPageState extends State<DriverJourneyScreenPage> {
                                         } else if (djList[index - 1].sts == 0) {
                                           Fluttertoast.showToast(
                                               msg:
-                                                  "You cant start Until you reach the previous stop point");
+                                                  "You have not started the previous point. Current point can be started only after starting the previous point");
                                         } else {
                                           updateStatus(item.seq, "13");
                                         }
@@ -540,7 +573,7 @@ class _DriverJourneyScreenPageState extends State<DriverJourneyScreenPage> {
                                         } else if (djList[index - 1].sts == 0) {
                                           Fluttertoast.showToast(
                                               msg:
-                                                  "You cant start Until you reach the previous stop point");
+                                                  "You have not started the previous point. Current point can be started only after starting the previous point");
                                         } else {
                                           updateStatus(item.seq, "13");
                                         }
@@ -589,7 +622,7 @@ class _DriverJourneyScreenPageState extends State<DriverJourneyScreenPage> {
                                         } else {
                                           Fluttertoast.showToast(
                                               msg:
-                                                  "You can't end the Journey, Because you does'nt reached the stop point");
+                                                  "The journey cannot be completed before crossing the stop points");
                                         }
                                         break;
                                       case 8:
@@ -599,7 +632,7 @@ class _DriverJourneyScreenPageState extends State<DriverJourneyScreenPage> {
                                         } else if (djList[index - 1].sts == 0) {
                                           Fluttertoast.showToast(
                                               msg:
-                                                  "You can't end the Journey, Because you does'nt reached the stop point");
+                                                  "The journey cannot be completed before crossing the stop points");
                                         } else {
                                           updateStatus(item.seq, '14');
                                           Fluttertoast.showToast(

@@ -202,7 +202,7 @@ class _AccountScreenState extends State<AccountScreen> {
                     backgroundColor: AppColors.color164,
                     title: const Text("CONFIRMATION",
                         style: TextStyle(color: Colors.white)),
-                    content: const Text("ARE YOU SURE TO LOGOUT?",
+                    content: const Text("Are You Sure To Logout?",
                         style: TextStyle(color: Colors.white)),
                     actions: <Widget>[
                       TextButton(

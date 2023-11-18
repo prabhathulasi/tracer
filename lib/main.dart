@@ -1,5 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_progress_hud/flutter_progress_hud.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,29 +33,10 @@ Future<void> main() async {
   runApp(const MyApp());
 }
 
-// class FirebaseNotifications {
-//   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
-
-//   void setUpFirebase() {
-//     _firebaseMessaging.configure(
-//       onMessage: (Map<String, dynamic> message) async {
-//         // Handle the foreground notification here
-//       },
-//       onLaunch: (Map<String, dynamic> message) async {
-//         // Handle the notification when the app is terminated
-//       },
-//       onResume: (Map<String, dynamic> message) async {
-//         // Handle the notification when the app is in the background
-//       },
-//     );
-//   }
-
-//   // Additional methods to subscribe to topics, get FCM token, etc.
-// }
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   static double letterSpacing = 0.6;
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(

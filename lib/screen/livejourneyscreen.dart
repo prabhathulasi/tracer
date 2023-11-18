@@ -198,7 +198,7 @@ class _LiveJourneyScreenPageState extends State<LiveJourneyScreenPage> {
                     context: context,
                     builder: (BuildContext context) => CupertinoAlertDialog(
                       title: Text("CONFIRMATION"),
-                      content: Text("ARE YOU SURE TO LOGOUT?"),
+                      content: Text("Are You Sure To Logout?"),
                       actions: <Widget>[
                         TextButton(
                           onPressed: () async {

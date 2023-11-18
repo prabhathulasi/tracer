@@ -102,7 +102,7 @@ class ListItem extends StatelessWidget {
             ? Icon(
                 FontAwesomeIcons.solidCircleCheck,
                 color: AppColors.colorb7b,
-                size: 5.sp,
+                size: 6.sp,
               )
             : const Text(""),
       ],

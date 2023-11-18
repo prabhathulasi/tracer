@@ -41,8 +41,8 @@ class LoginScreenState extends State<LoginScreen> {
     // Driver Login Details
     // emailController.text = "naserSah";
     // passwordController.text = "nase5283";
-    // emailController.text = "ashokKumar";
-    // passwordController.text = "asho7671";
+    emailController.text = "ashokKumar";
+    passwordController.text = "asho7671";
   }
 
   void _toggleObscureText() {
@@ -119,11 +119,8 @@ class LoginScreenState extends State<LoginScreen> {
                       borderSide: BorderSide(color: Color(0xff0f5164)),
                     ),
                     hintText: "Username",
-                    suffixIcon: Icon(
-                      Icons.check,
-                      size: 4.6.sp,
-                      color: const Color(0xFF778e95),
-                    ),
+                    suffixIcon: Icon(Icons.check,
+                        size: 4.6.sp, color: AppColors.color4c4),
                     labelStyle: TextStyle(color: _color5)),
               ),
               SizedBox(
@@ -152,7 +149,8 @@ class LoginScreenState extends State<LoginScreen> {
                   ),
                   labelStyle: TextStyle(color: _color5),
                   suffixIcon: IconButton(
-                      icon: Icon(_iconVisible, color: Colors.white54, size: 20),
+                      icon: Icon(_iconVisible,
+                          color: AppColors.colordff, size: 20),
                       onPressed: () {
                         _toggleObscureText();
                       }),
